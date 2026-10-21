@@ -54,3 +54,9 @@ strace = inspector at the kitchen door: photographs the ticket (before step 3) a
 receipt (after step 3). The "mangled" output is chronological: ticket photo, real
 output, receipt photo. strace's own photo lines are printed via its own write syscalls —
 no back door exists; everything on screen goes through the kernel.
+
+## Quiz result (graded at s02 open, 2026-10-21)
+Q1 B (kernel ✓; say "CPU privilege mode", not "silicon coating")
+Q2 C+ (loop ✓; MISSED: program is FROZEN during the syscall — re-quiz)
+Q3 B− (parts ✓; fd 1 is a PLACE not a request; MISSED partial write `= 1` — re-quiz)
+Q4 A (kernel-side checks, user space is editable)
