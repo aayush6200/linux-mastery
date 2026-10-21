@@ -43,3 +43,14 @@ terminal; you can see order → execution → receipt in one line.
 3. strace shows every syscall live: `write(1, "hello\n", 6) = 6` is order, work, receipt.
 4. Security checks live kernel-side; user-space rules can be edited away.
 5. Next: file descriptors — what that `1` really is, and why "everything is a file."
+
+## Addendum — the syscall loop, visualized (same night)
+The atom: **ticket → freeze → chef works → receipt → unfreeze.**
+1. Program fills the ticket (write: where=fd 1, what="hello\n", how much=6)
+2. Hands it over and FREEZES — the program does nothing during a syscall
+3. Kernel does the physical work (only the kernel ever touches the screen)
+4. Waiter returns the receipt (= 6); program unfreezes holding it
+strace = inspector at the kitchen door: photographs the ticket (before step 3) and the
+receipt (after step 3). The "mangled" output is chronological: ticket photo, real
+output, receipt photo. strace's own photo lines are printed via its own write syscalls —
+no back door exists; everything on screen goes through the kernel.
