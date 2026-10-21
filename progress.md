@@ -22,6 +22,7 @@ Order unchanged from the spec — it's correct: stack mechanics first, observabi
 second so every later topic is measured not described, then down the packet path
 into tuning/latency, then the surrounding prod skills. Drills interleave from S2.
 
+- [ ] 0. OS from zero: what a kernel is, programs vs processes, syscalls, files, /proc, the shell — taught against the lab, not in the abstract. (Inserted 2026-10-21: user calibrated "assume zero Linux/OS knowledge." Original session 1 stalled on "what is a process"; namespaces require process + file first.)
 - [ ] 1. Linux networking stack: ip link/addr/route/neigh, namespaces, veth, bridges — what Containerlab builds
 - [ ] 2. Observability: ss, tcpdump, /proc/net/*, ethtool -S, nstat, conntrack — finding drops
 - [ ] 3. Packet path: NIC → driver → ring buffer → softirq/NAPI → socket; interrupts, RSS/RPS, IRQ affinity
@@ -37,4 +38,4 @@ into tuning/latency, then the surrounding prod skills. Drills interleave from S2
 
 | # | Date | Topic | Quiz grade | Note |
 |---|------|-------|-----------|------|
-| 1 | 2026-10-21 | Namespaces + veth: what clab builds | — (first) | notes/s01-netns-veth.md |
+| 1 | 2026-10-21 | OS from zero: kernel, programs, processes | — (first) | notes/s01-os-from-zero.md |
