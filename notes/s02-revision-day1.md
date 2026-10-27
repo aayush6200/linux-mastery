@@ -8,9 +8,9 @@ Tomorrow's session opens with a no-notes quiz on exactly the five items below.
        Pass = answer "who puts ping's packet on the wire?" correctly with reasoning.
 - [x] 2. The syscall loop: ticket → freeze → chef works → receipt → unfreeze.
        Pass = recite the loop and state what the program does mid-syscall (nothing).
-- [ ] 3. Hands-on: rerun `strace -e trace=write echo hello`; read every part of
+- [x] 3. Hands-on: rerun `strace -e trace=write echo hello`; read every part of
        `write(1, "hello\n", 6) = 6` cold (the 1, the bytes, the count, the receipt).
-- [ ] 4. Receipts: `= 6` success, `= 2` partial write (program must retry), exit 0.
+- [x] 4. Receipts: `= 6` success, `= 2` partial write (program must retry), exit 0.
 - [ ] 5. Program vs process: file on disk (inert bytes) vs private RAM copy + PID.
        Pass = answer "23 routers, one bgpd recipe → how many PIDs?"
 
@@ -21,3 +21,9 @@ Tomorrow's session opens with a no-notes quiz on exactly the five items below.
 
 ## Session log
 (fills in as we go)
+- Boxes 1–4 passed. Deep dive earned: full strace chronology (held tickets, strace's
+  unfinished line, append-only terminal, microsecond timing). Self-corrected the
+  "hello prints first" ordering.
+- RECURRING GAP (3rd miss): partial-write receipts — always stops at "kernel wrote 2",
+  keeps dropping "the PROGRAM must retry the rest." Re-quiz until dead.
+- New today: exit status = final number left for the PARENT; 0 = success.
