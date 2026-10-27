@@ -4,9 +4,9 @@ Context: 6-day gap after s01, retention ~zero. Restarting day-one material, taug
 Tomorrow's session opens with a no-notes quiz on exactly the five items below.
 
 ## Today's syllabus (done when each box is checked)
-- [ ] 1. The kitchen: hardware is dumb; the kernel alone touches it; user space must ask.
+- [x] 1. The kitchen: hardware is dumb; the kernel alone touches it; user space must ask.
        Pass = answer "who puts ping's packet on the wire?" correctly with reasoning.
-- [ ] 2. The syscall loop: ticket → freeze → chef works → receipt → unfreeze.
+- [x] 2. The syscall loop: ticket → freeze → chef works → receipt → unfreeze.
        Pass = recite the loop and state what the program does mid-syscall (nothing).
 - [ ] 3. Hands-on: rerun `strace -e trace=write echo hello`; read every part of
        `write(1, "hello\n", 6) = 6` cold (the 1, the bytes, the count, the receipt).
