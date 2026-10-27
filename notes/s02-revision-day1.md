@@ -35,3 +35,17 @@ Tomorrow's session opens with a no-notes quiz on exactly the five items below.
 4. Program = inert file; process = private RAM workspace + PID. 23 runs = 23 workspaces, 23 PIDs; walls contain crashes. The process is the atom — no sub-PIDs.
 5. `echo $$` → own shell's PID (163410 today). A "router" = a team of processes; what groups them comes later (namespaces).
 Next (2026-10-28): process deep dive — family tree, how processes are born, /proc, ps/pstree. Open with no-notes quiz on today's five.
+
+## Late-night addendum — process, at the floor (no analogy)
+Struggled with "what IS a process" until analogies were dropped for physical facts:
+1. A program = a numbered list of tiny CPU steps, stored as bytes in a file.
+2. The CPU executes one step at a time, billions/sec, no comprehension.
+3. 200 runs on 6 CPUs → kernel TIME-SHARES: a few ms per turn, bookmark, rotate.
+   Simultaneity is an illusion of speed.
+→ A PROCESS = the kernel's package for one in-progress walk through one program's
+  steps: copy of the list + scratch data + bookmark + PID label.
+At any instant: 6 executing, the rest bookmarked — split between READY (want a turn)
+and FROZEN in syscalls (kernel skips them until their receipt arrives).
+Also corrected: parent freeze is OPTIONAL (wait is a syscall a parent may place; `&`
+skips it; unclaimed exit numbers = zombies — tomorrow). And: never simplify
+process = program; 200 processes may be 30 programs.
