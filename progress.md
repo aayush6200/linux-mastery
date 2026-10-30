@@ -39,4 +39,5 @@ into tuning/latency, then the surrounding prod skills. Drills interleave from S2
 | # | Date | Topic | Quiz grade | Note |
 |---|------|-------|-----------|------|
 | 1 | 2026-10-21 | OS from zero: kernel, programs, processes | — (first) | notes/s01-os-from-zero.md |
-| 2 | planned 2026-10-22 | What a process IS (fork/exec/PID), then file descriptors — 1 hr | s01 quiz: B/C+/B−/A | notes/s02-process-fds.md |
+| 2 | 2026-10-27 | Full revision from zero (kernel, syscall loop, receipts, program vs process) | — (restart) | notes/s02-revision-day1.md |
+| 3 | 2026-10-30 | Syscalls up close (strace, 394:1 lesson) + process states (R/S, top) — partial-write gap buried | quiz: passed after 1 miss | notes/s03-syscalls-up-close.md |
